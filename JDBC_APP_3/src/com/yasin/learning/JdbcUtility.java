@@ -13,11 +13,11 @@ public class JdbcUtility {
     }
 
     public static Connection getConnection() throws SQLException {
-        String url      = "jdbc:mysql://localhost:3306/JDBC_learning";
-        String user     = "root";
-        String password = "secure";
-        return DriverManager.getConnection(url, user, password);
-    }
+    String url      = System.getenv("DB_URL");
+    String user     = System.getenv("DB_USER");
+    String password = System.getenv("DB_PASSWORD");
+    return DriverManager.getConnection(url, user, password);
+}
 
     public static void closeAllConnection(ResultSet rs, PreparedStatement statement, Connection connection) {
         try {
