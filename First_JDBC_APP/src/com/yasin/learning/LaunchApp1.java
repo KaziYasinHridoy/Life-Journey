@@ -3,9 +3,9 @@ import java.sql.*;
 public class LaunchApp1 {
     static void main() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        String url="jdbc:mysql://localhost:3306/JDBC_learning";
-        String user="root";
-        String pass="secure";
+        String url      = System.getenv("DB_URL");
+        String user     = System.getenv("DB_USER");
+        String password = System.getenv("DB_PASSWORD");
         Connection connection= DriverManager.getConnection(url,user,pass);
 
         Statement statement = connection.createStatement();
