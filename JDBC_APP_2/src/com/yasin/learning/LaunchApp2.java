@@ -5,9 +5,9 @@ import java.sql.*;
 public class LaunchApp2 {
 
     public static void main(String[] args) {
-        String url  = "jdbc:mysql://localhost:3306/JDBC_learning";
-        String user = "root";
-        String pass = "secure";
+        String url      = System.getenv("DB_URL");
+        String user     = System.getenv("DB_USER");
+        String password = System.getenv("DB_PASSWORD");
 
         Connection connection = null;
         Statement  statement  = null;
