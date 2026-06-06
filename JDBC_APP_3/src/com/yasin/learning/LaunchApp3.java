@@ -39,7 +39,7 @@ public class LaunchApp3 {
 
             ps = connection.prepareStatement(sql);
             boolean status= ps.execute();
-            ResultSet rs = ps.getResultSet();
+            rs = ps.getResultSet();
             System.out.println("Added Information:");
             if (status) {
                 while (rs.next()) {
