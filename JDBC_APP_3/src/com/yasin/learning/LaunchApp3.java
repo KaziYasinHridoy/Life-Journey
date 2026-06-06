@@ -9,6 +9,7 @@ public class LaunchApp3 {
 
         Connection connection = null;
         PreparedStatement ps = null;
+        ResultSet rs = null;
 
         try {
 
@@ -57,6 +58,7 @@ public class LaunchApp3 {
         }
         finally {
             JdbcUtility.closeAllConnection(
+                    rs,
                     ps,
                     connection
             );
