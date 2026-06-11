@@ -1,4 +1,4 @@
-package com.telusko.learning.tomcat1;
+package com.yasin.learning.tomcat1;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
