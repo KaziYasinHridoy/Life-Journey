@@ -24,7 +24,7 @@ public class LaunchApp3 {
             System.out.println("Total Inputs:");
             int n = scanner.nextInt();
             for (int i = 0; i < n; i++) {
-                System.out.println("-------Student " + i + 1 + "-------");
+                System.out.println("-------> Student " +( i + 1 )+ " <-------");
                 System.out.println("ID:");
                 ps.setInt(1, scanner.nextInt());
                 System.out.println("Name:");
@@ -33,8 +33,10 @@ public class LaunchApp3 {
                 ps.setInt(3, scanner.nextInt());
                 System.out.println("City:");
                 ps.setString(4, scanner.next());
-                ps.executeUpdate();
+                ps.addBatch();
             }
+            scanner.close();
+            int[] affectedRows =ps.executeBatch();
             sql = "SELECT * FROM student";
 
             ps = connection.prepareStatement(sql);

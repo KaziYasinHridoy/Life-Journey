@@ -37,5 +37,6 @@ public class JdbcUtility {
     // If you only need to close connection
     public static void closeAllConnection(Connection connection) {
         closeAllConnection(null, null, connection);
+        System.out.println( "hahah");
     }
 }

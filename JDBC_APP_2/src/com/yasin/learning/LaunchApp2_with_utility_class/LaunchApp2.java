@@ -5,32 +5,32 @@ public class LaunchApp2 {
     public static void main(String[] args) {
 
         Connection connection = null;
-        Statement  statement  = null;
+        Statement  createStatement  = null;
         ResultSet  rs         = null;
 
         try {
             connection = JdbcUtility.getConnection(); // change 1
 
-            statement  = connection.createStatement();
+            createStatement  = connection.createStatement();
 
-            statement.execute("DROP TABLE IF EXISTS student2");
+            createStatement.execute("DROP TABLE IF EXISTS student2");
 
             String createSQL = "CREATE TABLE IF NOT EXISTS student2 (" +
                     "id INT PRIMARY KEY AUTO_INCREMENT, " +
                     "name VARCHAR(50), " +
                     "age INT, " +
                     "grade VARCHAR(10))";
-            statement.execute(createSQL);
+            createStatement.execute(createSQL);
 
             String insertSQL = "INSERT INTO student2 (name, age, grade) VALUES " +
                     "('Alice', 20, 'A'), " +
                     "('Bob', 22, 'B'), " +
                     "('Charlie', 21, 'A+')";
-            statement.execute(insertSQL);
+            createStatement.execute(insertSQL);
 
             String  sql    = "SELECT * FROM student2";
-            boolean status = statement.execute(sql);
-            rs = statement.getResultSet();
+            boolean status = createStatement.execute(sql);
+            rs = createStatement.getResultSet();
             if (status) {
                 while (rs.next()) {
                     System.out.println(
@@ -41,14 +41,14 @@ public class LaunchApp2 {
                     );
                 }
             } else {
-                int rowsAffected = statement.getUpdateCount();
+                int rowsAffected = createStatement.getUpdateCount();
                 System.out.println("Rows affected: " + rowsAffected);
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            JdbcUtility.closeAllConnection(rs, statement, connection); // change 2
+            JdbcUtility.closeAllConnection(rs, createStatement, connection); // change 2
         }
     }
 }
