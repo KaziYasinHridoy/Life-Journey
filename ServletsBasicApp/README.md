@@ -33,8 +33,11 @@ The project ships with **Method 3 (Session Tracking)** active. Methods 1, 2, and
 ServletsBasicApp/
 ├── src/
 │   └── main/
-│       ├── java/
-│       │   └── com/telusko/learning/tomcat1/
+│       ├── java/cd D:\Backend\Projects
+git add ServletsBasicApp/README.md
+git commit -m "Update README"
+git push
+│       │   └── com/yasin/learning/tomcat1/
 │       │       ├── MyServlet.java        # Entry point — reads form, sends data
 │       │       └── MyServlet2.java       # Receives data, forwards to JSP
 │       └── webapp/
