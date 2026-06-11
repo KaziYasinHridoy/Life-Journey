@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <main class="container">
+
+    <div class="card">
+
+      <div class="card-header">
+        <div class="badge">STUDENT PORTAL</div>
+        <h1>Register<br/><span>Student</span></h1>
+        <p class="subtitle">Fill in the details below to register a new student into the system.</p>
+      </div>
+
+      <form action="MyServlet" method="post" class="form" novalidate>
+
+        <div class="form-group">
+          <label for="id">
+            <span class="label-text">Student ID</span>
+            <span class="label-tag">required</span>
+          </label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            </span>
+            <input type="number" id="id" name="id" placeholder="e.g. 101" required/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name">
+            <span class="label-text">Full Name</span>
+            <span class="label-tag">required</span>
+          </label>
+          <div class="input-wrap">
+            <span class="input-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <input type="text" id="name" name="name" placeholder="e.g. Iqbal Hossain" required/>
+          </div>
+        </div>
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="age">
+              <span class="label-text">Age</span>
+              <span class="label-tag">required</span>
+            </label>
+            <div class="input-wrap">
+              <span class="input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </span>
+              <input type="number" id="age" name="age" placeholder="e.g. 21" min="1" max="120" required/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="city">
+              <span class="label-text">City</span>
+              <span class="label-tag">required</span>
+            </label>
+            <div class="input-wrap">
+              <span class="input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <input type="text" id="city" name="city" placeholder="e.g. Dhaka" required/>
+            </div>
+          </div>
+
+        </div>
+
+        <button type="submit" class="btn-submit">
+          <span class="btn-text">Register Student</span>
+          <span class="btn-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </button>
+
+      </form>
+
+    </div>
+
+  </main>
+
+</body>
+</html>
